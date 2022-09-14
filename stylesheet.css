@@ -1,0 +1,60 @@
+:root {
+    --dark: #212121;
+    --highlight: #FF0077;
+    --highlight-dark: #d80439;
+    --highlight-darker: #ad0000;
+}
+html {
+    color: #fff;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--dark);
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 5ex;
+}
+
+h2 {
+    margin-bottom: 5ex;
+}
+
+div.input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: large;
+}
+
+button {
+    background-color: var(--highlight);
+    border: 0px;
+    border-radius: 20%;
+    padding: 0.75ex 1.5ex;
+    color: #fff;
+    font-weight: bold;
+    font-size: 100%;
+    transition: 0.2s;
+    margin: 2.8ex 0.3ex;
+}
+
+button:hover {
+    background-color: var(--highlight-dark);
+    transition: 0.2s;
+}
+
+button:active {
+    background-color: var(--highlight-darker);
+}
+
+div.input>textarea {
+    resize: none;
+    font-size: 100%;
+    padding: none;
+    border-radius: 10%;
+    font-size: larger;
+    margin-right: 2ex;
+}
