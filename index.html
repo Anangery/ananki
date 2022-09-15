@@ -4,7 +4,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="stylesheet.css" rel="stylesheet">
-    <script src="main.js"></script>
     <title>Home</title>
 </head>
 <body>
@@ -13,11 +12,12 @@
         <h2>The Best Quizlet Alternative</h2>
     </div>
     <div class="input">
-        <textarea rows="1" name="front" id="front" placeholder="Front side"></textarea>
-        <textarea rows="1" name="back" placeholder="Back side"></textarea>
+        <input id="front" placeholder="Front side" autofocus>
+        <input id="back" placeholder="Back side">
         <!--<button name="Input">test</button>-->
     </div>
-    <button name="newRow">Add Row</button>
     <button name="submit" id="submit" type="submit" onclick="submit()">Submit</button>
+    <button name="submit" id="submit" type="done" onclick="done()">Done</button>
+    <script src="main.js"></script>
 </body>
 </html>
