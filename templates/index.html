@@ -1,0 +1,56 @@
+{%extends 'base.html'%}
+
+{%block head%}
+    <title>Main</title>
+{%endblock head%}
+{%block body%}
+    <div class="header">
+        <h1>Ananki</h1>
+        <h2>The best quizlet alternative</h2>
+    </div>
+    <div class="input">
+        {{ form.hidden_tag() }}
+        {%if not name%}
+            <form method="POST" action="/name">
+                {{forme.name(required=true, placeholder="Name of your deck...")}}
+                {{forme.submit}}
+            </form>
+        {%else%}
+        <form method="POST" action="/send">
+            <h2>"{{name[0]['name']}}"</h2>
+            <br>
+            {{form.front.label}}
+            {{form.front(autofocus=true, required=true)}}
+            {{form.back.label}}
+            {{form.back(required=true)}}
+            <br>
+            {{form.submit(class="subminp")}}
+        </form>
+        {%endif%}
+    </div>
+    <p>Enter your cards in the field above. When you do they will appear under here</p>
+    <table class="forminp">
+        {%if name%}
+            <h2>{{name[0]['name']}}</h2>
+        {%else%}
+        {%endif%}
+        <tr>
+            <th>Id</th>
+            <th>Front</th>
+            <th>Back</th>
+            <th>Actions</th>
+        </tr>
+        {% for card in cards %}
+            <tr>
+                <td>{{card['id']}}</td>
+                <td>{{card['front']}}</td>
+                <td>{{card['back']}}</td>
+                <td>
+                    <a href="/delete/{{card['id']}}">Delete</a><br>
+                    <a href="/edit/{{card['id']}}">Edit</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a class="done" href="{{url_for('finish')}}"><img src="{{url_for('static', filename='plus.png')}}"></a>
+{%endblock body%}

@@ -1,0 +1,65 @@
+:root {
+    --dark: #212121;
+    --highlight: #FF0077;
+    --highlight-dark: #940529;
+    --highlight-darker: #580202;
+}
+
+html {
+    background-color: var(--dark);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+.forminp {
+    display:flex;
+    justify-content: center;
+}
+
+.subminp {
+    background-color: var(--highlight);
+    color: white;
+    border: 0px solid var(--highlight-dark);
+    border-radius: 1ex;
+    font-size: 100%;
+    margin-top: 10px;
+}
+
+table, th, td{
+    border: 1px solid;
+    border-color: gray;
+    border-collapse: collapse;
+}
+
+table {
+    border-color: var(--dark);
+}
+a{
+    text-decoration: none;
+    color: lightgrey;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+a.done {
+    background-color: var(--dark);
+    color: var(--dark);
+    border: 0px;
+    position:fixed;
+    bottom: 20px;
+    right: 40px;
+    width: 70px;
+}
+
+a.done>img {
+    width: 70px;
+}
+
+a.done:hover>img {
+    filter: brightness(75%);
+}

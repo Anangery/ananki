@@ -1,0 +1,14 @@
+{%extends 'base.html'%}
+
+{%block head%}
+    <title>Edit</title>
+{%endblock head%}
+{%block body%}
+    <h1>Edit</h1>
+    <form method="POST" action="/edit/{{card.id}}">
+        {{ form.hidden_tag() }}
+        {{form.front(value=card.front)}}
+        {{form.back(value=card.back)}}
+        {{form.submit}}
+    </form>
+{%endblock body%}
